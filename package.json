@@ -1,0 +1,23 @@
+{
+  "name": "type-challenges-solutions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Solutions for the collection of TypeScript type challenges",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logan70/type-challenges-solutions.git"
+  },
+  "keywords": [],
+  "author": "logan70@163.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/logan70/type-challenges-solutions/issues"
+  },
+  "homepage": "https://github.com/logan70/type-challenges-solutions#readme",
+  "devDependencies": {
+    "@type-challenges/utils": "^0.1.1"
+  }
+}
