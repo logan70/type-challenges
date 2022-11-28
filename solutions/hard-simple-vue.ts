@@ -46,24 +46,18 @@
 
 
 /* _____________ Your Code Here _____________ */
-type VueOptions<
+declare function SimpleVue<
   Data,
   Computed,
   Methods,
   ComputedThis = {
     [K in keyof Computed]: Computed[K] extends (...args: any[]) => infer R ? R : never
   }
-> = {
+>(options: {
   data: (this: undefined) => Data,
-  computed: Computed,
-  methods: Methods,
-} & ThisType<Data & ComputedThis & Methods>
-
-declare function SimpleVue<
-  Data,
-  Computed,
-  Methods,
->(options: VueOptions<Data, Computed, Methods>): any
+  computed: Computed & ThisType<Readonly<Data> & ComputedThis>,
+  methods: Methods & ThisType<Data & Readonly<ComputedThis> & Methods>,
+}): any;
 
 
 /* _____________ Test Cases _____________ */
