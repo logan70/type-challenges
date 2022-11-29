@@ -19,15 +19,12 @@
 
 
 /* _____________ Your Code Here _____________ */
-type Alphabet = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G'
-  | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P'
-  | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
 
 type CamelCase<S extends string, Pre extends string = '', Result extends string = ''> = S extends `${infer F}${infer R}`
   ? Pre extends '_'
     ? CamelCase<R, Capitalize<F>, Result>
     : CamelCase<R, Uncapitalize<F>, `${Result}${Pre}`>
-  : `${Result}${Pre extends '' ? '' : Pre}`;
+  : `${Result}${Pre}`;
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
